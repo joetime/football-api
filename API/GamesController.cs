@@ -45,7 +45,6 @@ namespace Football4
             return DB.Games
                 .Include("HomeTeam")
                 .Include("AwayTeam")
-                //.Include("Favorite.TeamId")
                 .Where(g => g.HomeTeam.TeamId == teamId || g.AwayTeam.TeamId == teamId)
                 .ToList();
         }
